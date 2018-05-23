@@ -4,23 +4,12 @@
 <head>
   <meta charset="utf-8">
   <tittle>Battleship</tittle>
-  <style>
-    body {
-      background-color: black;
-    }
-
-    div#board {
-      position: relative;
-      width: 1024px;
-      height: 863px;
-      margin: auto;
-      background: url("board.jpg") no-repeat;
-    }
-  </style>
+  <link type="text/css" rel="stylesheet" href="battleship.css">
 </head>
 
 <body>
   <div id="board">
+    <div id="messageArea"></div>
     <table>
       <tr>
         <td id="00"></td>
@@ -85,8 +74,12 @@
         <td id="65"></td>
         <td id="66"></td>
       </tr>
-    </table>
 
+    </table>
+    <form>
+      <input type="text" id="guessInput" placeholder="Ao">
+      <input type="button" id="fireButton" valce="Fire!">
+    </form>
   </div>
   <script src="battleship.js"></script>
 </body>
