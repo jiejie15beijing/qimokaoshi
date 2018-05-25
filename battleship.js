@@ -73,12 +73,14 @@ var model = {
       row = Math.floor(Math.random() * this.boardSize);
       col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
     } else {
-      row = Math.floor(Math.random() * this.boardSize);
       col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+      row = Math.floor(Math.random() * this.boardSize);
     }
     var newShipLocations = [];
     for (var i = 0; i < this.shipLength; i++) {
       if (diretion === 1) {
+        newShipLocations.push(row +""+(col+ i));
+      }else{
         newShipLocations.push((row + i) + "" + col);
       }
     }
