@@ -28,7 +28,7 @@ var model = {
   fire: function (guess) {
     for (var i = 0; i < this.numShips; i++) {
       var ship = this.ships[i];
-      var index =ship.locations.indexOf(guess);
+      var index = ship.locations.indexOf(guess);
       if (index >= 0) {
         ship.hits[index] = "hit";
         view.displayHit(guess);
@@ -73,14 +73,14 @@ var model = {
       row = Math.floor(Math.random() * this.boardSize);
       col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
     } else {
-      col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
-      row = Math.floor(Math.random() * this.boardSize);
+      col = Math.floor(Math.random() * this.boardSize);
+      row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
     }
     var newShipLocations = [];
     for (var i = 0; i < this.shipLength; i++) {
       if (diretion === 1) {
-        newShipLocations.push(row +""+(col+ i));
-      }else{
+        newShipLocations.push(row + "" + (col + i));
+      } else {
         newShipLocations.push((row + i) + "" + col);
       }
     }
@@ -131,7 +131,7 @@ var controller = {
       this.guesses++;
       var hit = model.fire(location);
       if (hit && model.shipsSunk === model.numShips) {
-        view.displayMessage("You sank all my battleships, in " +this.guesses + " guesses");
+        view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
       }
     }
   }
